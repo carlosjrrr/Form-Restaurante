@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formatador de Pedidos WhatsApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="historico/historico.css" />
+</head>
+<body>
+  <div class="container">
+
+    <div class="top-bar">
+      <h3>
+        <strong>Tempero do Kadu</strong>
+      </h3>
+      <button id="btnHistorico">Histórico</button>
+      <button id="btnFormulario" style="display:none;">Voltar</button>
+    </div>
+
+    <!-- Formulário -->
+    <div id="formulario">
+      <form id="pedidoForm">
+        <input type="text" id="nome" placeholder="Nome do cliente" required />
+        <label class="checkbox">
+          <input type="checkbox" id="codigoIfood" /> Pegar código iFood?
+        </label>
+
+        <select id="bebida">
+          <option value="">Sem bebida</option>
+          <option value="Coca-Cola 2L">Coca-Cola 2L</option>
+          <option value="Coca-Cola 2L">Mantiqueira 2L</option>
+          <option value="Coca-Cola 2L">Coca-Cola 600 ML</option>
+          <option value="Coca-Cola Lata">Coca-Cola Lata</option>
+          <option value="Guaraná 2L">Coca Mini</option>
+          <option value="Guaraná Lata">Ativ Guaraná</option>
+          <option value="Guaraná 600 ML">Ativ Açai</option>
+          <option value="Guaraná 1L">Água com gás</option>
+          <option value="Água Mineral">Água sem gás</option>
+          <option value="Suco">Suco</option>
+        </select>
+
+        <textarea id="endereco" placeholder="Endereço completo" required></textarea>
+
+        <select id="pagamento" required>
+          <option value="">Selecione forma de pagamento...</option>
+          <option value="Pago">Pago</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão">Cartão</option>
+          
+        </select>
+
+        <div id="dinheiroFields" class="hidden">
+          <input type="number" id="receber" placeholder="Valor a receber" min="0" step="0.01" />
+          <input type="number" id="troco" placeholder="Troco para (opcional)" min="0" step="0.01" />
+        </div>
+
+        <div id="cartaoFields" class="hidden">
+          <input
+            type="number"
+            id="valorCartao"
+            placeholder="Valor a cobrar no cartão"
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <button type="submit">Gerar Mensagem</button>
+      </form>
+
+      <div id="mensagemContainer" class="hidden">
+        <h4>Mensagem Pronta:</h4>
+        <textarea id="mensagemPronta" readonly></textarea>
+        <button id="copiarMensagem">Copiar Mensagem</button>
+      </div>
+    </div>
+
+    <!-- Histórico -->
+    <div id="historico" style="display:none;">
+      <h3>Histórico de Pedidos</h3>
+      <div id="listaHistorico"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Formatador de Pedidos WhatsApp",
+  "version": "1.0",
+  "description": "Extensão para formatar pedidos do WhatsApp e facilitar envio para entregador.",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Formatador de Pedidos WhatsApp"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "storage"
+  ]
+}
